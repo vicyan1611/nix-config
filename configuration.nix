@@ -10,7 +10,6 @@
       ./hardware-configuration.nix
       ./hardware-acceleration.nix
     ];
-
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -33,10 +32,19 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [
+        fcitx5-mozc
+        fcitx5-gtk
+	libsForQt5.fcitx5-unikey
+	kdePackages.fcitx5-unikey
+	kdePackages.fcitx5-qt
+    ];
+  };
   console = {
     font = "Lat2-Terminus16";
-  #   keyMap = "us";
+   #  keyMap = "us";
     useXkbConfig = true; # use xkb.options in tty.
   };
 
@@ -58,7 +66,7 @@
   environment.sessionVariables = {
   #  WLR_NO_HARDWARE_CURSORS = "1";  
     NIXOS_OZONE_WL = "1";	
-  };
+};
   
   hardware = {
     opengl.enable = true;
@@ -69,7 +77,7 @@
 
   # Enable xdg Desktop Portal
   xdg.portal.enable = true;
-
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   # Enable sound with pipeware
   sound.enable = true;
   security.rtkit.enable = true;
@@ -119,6 +127,8 @@
      git
      obs-studio
      pavucontrol
+     xfce.thunar
+     btop
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
