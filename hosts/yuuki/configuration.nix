@@ -9,12 +9,13 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./hardware-acceleration.nix
+      ../../modules/programs/common.nix
     ];
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "yuuki"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
@@ -47,7 +48,7 @@
    #  keyMap = "us";
     useXkbConfig = true; # use xkb.options in tty.
   };
-
+  nixpkgs.config.allowUnfree = true;
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
