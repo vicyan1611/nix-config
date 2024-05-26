@@ -40,6 +40,16 @@
    userName = "vicyann";
    userEmail = "vinhpham123.np@gmail.com";
   };
+
+  programs.neovim = {
+   enable = true;
+   viAlias = true;
+   vimAlias = true;
+   vimdiffAlias = true;
+   plugins = with pkgs.vimPlugins; [
+      nvim-treesitter.withAllGrammars
+    ];
+  };
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
