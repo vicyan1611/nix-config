@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../modules/programs/common.nix
+      ../../modules/programs/laptop.nix
     ];
 
   #Update to use newest kernel (for rog zephyrus g14)
@@ -124,11 +125,6 @@
     home = "/home/vicyann";
   };
   nix.settings.experimental-features = ["nix-command" "flakes"];
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-     brightnessctl
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
