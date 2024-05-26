@@ -22,5 +22,6 @@
    btop
    firefox
    networkmanagerapplet
+   home-manager
   ];
 }

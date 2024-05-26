@@ -3,9 +3,13 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     # Please replace yuuki with your hostname
     nixosConfigurations.yuuki = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -22,5 +26,9 @@
         ./hosts/yukino/configuration.nix
       ];
    };
+    homeConfigurations.vicyann = home-manager.lib.homeManagerConfiguration {
+      pkgs =  nixpkgs.legacyPackages."x86_64-linux";
+      modules = [ ./home.nix ];
+    };
   };
 }
