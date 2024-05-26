@@ -23,5 +23,6 @@
    firefox
    networkmanagerapplet
    home-manager
+   gcc
   ];
 }
