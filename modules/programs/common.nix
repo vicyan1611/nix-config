@@ -25,5 +25,14 @@
    home-manager
    gcc
    lazygit
+
+   lunarvim
+   gnumake
+   python3
+   python312Packages.pip
+   nodejs_22
+   cargo
+   ripgrep
+   clang-tools
   ];
 }
