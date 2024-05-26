@@ -10,85 +10,73 @@
       ./hardware-configuration.nix
       ./hardware-acceleration.nix
       ../../modules/programs/common.nix
+      ../../modules/services/common.nix
     ];
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "yuuki"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   # Set your time zone.
-  time.timeZone = "Asia/Ho_Chi_Minh";
+  # time.timeZone = "Asia/Ho_Chi_Minh";
   
   # Install fonts
-  fonts.packages = with pkgs; [
-   (nerdfonts.override { fonts = ["SpaceMono"]; })
-  ];
+ # fonts.packages = with pkgs; [
+  # (nerdfonts.override { fonts = ["SpaceMono"]; })
+  #];
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
-  i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [
-        fcitx5-mozc
-        fcitx5-gtk
-	libsForQt5.fcitx5-unikey
-	kdePackages.fcitx5-unikey
-	kdePackages.fcitx5-qt
-    ];
-  };
-  console = {
-    font = "Lat2-Terminus16";
+  #console = {
+   # font = "Lat2-Terminus16";
    #  keyMap = "us";
-    useXkbConfig = true; # use xkb.options in tty.
-  };
-  nixpkgs.config.allowUnfree = true;
+  #  useXkbConfig = true; # use xkb.options in tty.
+ # };
+ # nixpkgs.config.allowUnfree = true;
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+ # services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.displayManager.gdm.enable = true;
   
   
 
   # Enable hyprland on NixOS.
-  programs.hyprland = {
-    enable = true;
+  #programs.hyprland = {
+   # enable = true;
   # enableNvidiaPatches = true;
-    xwayland.enable = true;
-  };
+    #xwayland.enable = true;
+ # };
   
-  environment.sessionVariables = {
+  #environment.sessionVariables = {
   #  WLR_NO_HARDWARE_CURSORS = "1";  
-    NIXOS_OZONE_WL = "1";	
-};
+   # NIXOS_OZONE_WL = "1";	
+#}
   
-  hardware = {
-    opengl.enable = true;
+ # hardware = {
+  #  opengl.enable = true;
     
-    nvidia.modesetting.enable = true;
-    pulseaudio.enable = false;
-  };
+   # nvidia.modesetting.enable = true;
+   # pulseaudio.enable = false;
+  #};
 
   # Enable xdg Desktop Portal
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+ # xdg.portal.enable = true;
+#  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   # Enable sound with pipeware
-  sound.enable = true;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    jack.enable = true;
-    pulse.enable = true;
-  };
+ # sound.enable = true;
+  #security.rtkit.enable = true;
+ # services.pipewire = {
+  #  enable = true;
+   # alsa.enable = true;
+    #alsa.support32Bit = true;
+   # jack.enable = true;
+   # pulse.enable = true;
+  #};
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
@@ -104,12 +92,12 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.vicyann = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager"]; # Enable ‘sudo’ for the user.
-    home = "/home/vicyann";
-  };
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+ # users.users.vicyann = {
+   # isNormalUser = true;
+   # extraGroups = [ "wheel" "networkmanager"]; # Enable ‘sudo’ for the user.
+  #  home = "/home/vicyann";
+ # };
+ # nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
