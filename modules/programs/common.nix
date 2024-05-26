@@ -24,5 +24,6 @@
    networkmanagerapplet
    home-manager
    gcc
+   lazygit
   ];
 }
