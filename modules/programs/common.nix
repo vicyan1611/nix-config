@@ -34,5 +34,6 @@
    cargo
    ripgrep
    clang-tools
+   lua-language-server
   ];
 }
