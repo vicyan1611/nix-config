@@ -37,5 +37,7 @@
    clang-tools
    lua-language-server
    stylua 
+   
+   p7zip
   ];
 }
