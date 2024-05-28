@@ -33,7 +33,9 @@
    nodejs_22
    cargo
    ripgrep
+   
    clang-tools
    lua-language-server
+   stylua 
   ];
 }

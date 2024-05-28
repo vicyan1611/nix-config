@@ -1,17 +1,15 @@
 return {
-  {
-    'neovim/nvim-lspconfig',
-    config = function()
-      local lsp_config = require("lspconfig") --Install lsp using nix-pkgs 
-      lsp_config.clangd.setup({})
-      lsp_config.lua_ls.setup({})
+	{
+		"neovim/nvim-lspconfig",
+		config = function()
+			local lsp_config = require("lspconfig") --Install lsp using nix-pkgs
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			lsp_config.clangd.setup({ capabilities = capabilities })
+			lsp_config.lua_ls.setup({ capabilities = capabilities })
 
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-      vim.keymap.set({ 'n' }, '<leader>ca', vim.lsp.buf.code_action, {})
-    end
-  },
-  {'hrsh7th/cmp-nvim-lsp'},
-  {'hrsh7th/nvim-cmp'},
-  {'L3MON4D3/LuaSnip'},
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+			vim.keymap.set({ "n" }, "<leader>ca", vim.lsp.buf.code_action, {})
+		end,
+	},
 }
