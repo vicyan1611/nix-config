@@ -39,5 +39,8 @@
    stylua 
    
    p7zip
+
+   onedrive
+   dbeaver-bin
   ];
 }

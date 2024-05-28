@@ -76,9 +76,12 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.vicyann = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager"]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "docker" ]; # Enable ‘sudo’ for the user.
     home = "/home/vicyann";
   };
   nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  # Docker
+  virtualisation.docker.enable = true;
 }
 
