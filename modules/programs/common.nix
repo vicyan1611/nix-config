@@ -44,5 +44,9 @@
    dbeaver-bin
 
    wl-clipboard
+
+   grim
+   slurp
+   wev
   ];
 }
