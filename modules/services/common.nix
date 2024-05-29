@@ -83,5 +83,9 @@
 
   # Docker
   virtualisation.docker.enable = true;
+
+  # Add zsh to nixos and enable for all users
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
 }
 
