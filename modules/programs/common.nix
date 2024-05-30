@@ -37,7 +37,9 @@
    clang-tools
    lua-language-server
    stylua 
-   
+   pyright
+   nil
+
    p7zip
 
    onedrive
