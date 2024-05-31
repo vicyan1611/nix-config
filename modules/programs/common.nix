@@ -50,5 +50,7 @@
    grim
    slurp
    wev
+
+   arduino-ide
   ];
 }

@@ -57,6 +57,8 @@
     
     nvidia.modesetting.enable = true;
     pulseaudio.enable = false;
+    bluetooth.enable = true;
+    bluetooth.powerOnBoot = true;
   };
   
   # Enable xdg Desktop Portal
@@ -72,11 +74,12 @@
     jack.enable = true;
     pulse.enable = true;
   };
+  services.blueman.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.vicyann = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "docker" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "docker" "dialout"]; # Enable ‘sudo’ for the user.
     home = "/home/vicyann";
   };
   nix.settings.experimental-features = ["nix-command" "flakes"];
