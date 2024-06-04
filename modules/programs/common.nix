@@ -52,5 +52,7 @@
    wev
 
    arduino-ide
+
+   hugo
   ];
 }
