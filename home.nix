@@ -68,6 +68,14 @@
       source = dotfiles/kitty;
       recursive = true;
     };
+    ".config/hypr" = {
+      source = dotfiles/hypr;
+      recursive = true;
+    };
+    ".config/nvim" = {
+      source = dotfiles/nvim;
+      recursive = true;
+    };
   };
 
   # Home Manager can also manage your environment variables through
