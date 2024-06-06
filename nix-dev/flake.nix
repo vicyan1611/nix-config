@@ -22,6 +22,8 @@
       pkgs.mkShell
         {
           nativeBuildInputs = with pkgs; [
+            python312
+            python312Packages.numpy
           ];
           shellHook = ''
             echo "Welcom to nix python development"
