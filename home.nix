@@ -64,6 +64,10 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".config/kitty" = {
+      source = dotfiles/kitty;
+      recursive = true;
+    };
   };
 
   # Home Manager can also manage your environment variables through
