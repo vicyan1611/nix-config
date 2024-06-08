@@ -38,7 +38,8 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
+  services.xserver.videoDrivers = ["nvidia"];
+  
   services.xserver.displayManager.gdm.enable = true;
 
   # Enable hyprland on NixOS.
@@ -54,11 +55,26 @@
   
   hardware = {
     opengl.enable = true;
-    
-    nvidia.modesetting.enable = true;
+    opengl.driSupport = true;
+    opengl.driSupport32Bit = true;
+
     pulseaudio.enable = false;
     bluetooth.enable = true;
     bluetooth.powerOnBoot = true;
+  };
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+
+    powerManagement.enable = false;
+
+    powerManagement.finegrained = false;
+
+    open = false;
+
+    nvidiaSettings = true;
+
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
   
   # Enable xdg Desktop Portal

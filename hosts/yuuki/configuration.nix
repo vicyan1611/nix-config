@@ -17,29 +17,21 @@
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
-  
-
-  # DISABLE NVIDIA
-  boot.extraModprobeConfig = ''
-  blacklist nouveau
-  options nouveau modeset=0
-'';
-  
-services.udev.extraRules = ''
-  # Remove NVIDIA USB xHCI Host Controller devices, if present
-  ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0c0330", ATTR{power/control}="auto", ATTR{remove}="1"
-  # Remove NVIDIA USB Type-C UCSI devices, if present
-  ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0c8000", ATTR{power/control}="auto", ATTR{remove}="1"
-  # Remove NVIDIA Audio devices, if present
-  ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x040300", ATTR{power/control}="auto", ATTR{remove}="1"
-  # Remove NVIDIA VGA/3D controller devices
-  ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x03[0-9]*", ATTR{power/control}="auto", ATTR{remove}="1"
-'';
-boot.blacklistedKernelModules = [ "nouveau" "nvidia" "nvidia_drm" "nvidia_modeset" ];
-
   
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
+	hardware.nvidia.prime = {
+    sync.enable = true;
+	# Make sure to use the correct Bus ID values for your system!
+		nvidiaBusId = "PCI:2:0:0";
+		intelBusId = "PCI:0:2:0";
+                # amdgpuBusId = "PCI:54:0:0"; For AMD GPU
+	};
+  
+  programs.steam.enable = true;
+  programs.steam.gamescopeSession.enable = true;
+
+  programs.gamemode.enable = true;
+
   system.stateVersion = "23.11"; # Did you read the comment?
 
 }

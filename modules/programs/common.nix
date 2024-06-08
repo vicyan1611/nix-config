@@ -54,5 +54,9 @@
    arduino-ide
 
    hugo
+
+   lshw
+
+   mangohud
   ];
 }
