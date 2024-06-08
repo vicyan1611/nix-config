@@ -60,5 +60,14 @@
    mangohud
    protonup
    steam-run
+
+   kdePackages.gwenview
+   mpv
+   ncmpcpp
+
+   calibre
+
+   libreoffice-qt
+    
   ];
 }

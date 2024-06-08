@@ -126,11 +126,20 @@
       # package.disabled = true;
     };
   };
+
+  # adding for calibre
+  services.udisks2.enable = true;
+
+  # adding steam
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "steam"
     "steam-original"
     "steam-run"
   ];
+  
+  services.mpd = {
+    enable = true;
+  };
 
   users.defaultUserShell = pkgs.zsh;
 
