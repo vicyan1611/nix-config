@@ -58,5 +58,7 @@
    lshw
 
    mangohud
+   protonup
+
   ];
 }

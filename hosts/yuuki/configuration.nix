@@ -27,11 +27,6 @@
                 # amdgpuBusId = "PCI:54:0:0"; For AMD GPU
 	};
   
-  programs.steam.enable = true;
-  programs.steam.gamescopeSession.enable = true;
-
-  programs.gamemode.enable = true;
-
   system.stateVersion = "23.11"; # Did you read the comment?
 
 }

@@ -49,7 +49,9 @@
   };
 
   environment.sessionVariables = {
-  #  WLR_NO_HARDWARE_CURSORS = "1";  
+  #  WLR_NO_HARDWARE_CURSORS = "1"; 
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS =
+      "\\\${HOME}/.steam/root/compatibilitytools.d";
     NIXOS_OZONE_WL = "1";	
   };
   
@@ -125,5 +127,11 @@
     };
   };
   users.defaultUserShell = pkgs.zsh;
+
+  programs.steam.enable = true;
+  programs.steam.gamescopeSession.enable = true;
+
+  programs.gamemode.enable = true;
+
 }
 
