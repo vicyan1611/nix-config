@@ -137,10 +137,6 @@
     "steam-run"
   ];
   
-  services.mpd = {
-    enable = true;
-  };
-
   users.defaultUserShell = pkgs.zsh;
 
   programs.steam.enable = true;

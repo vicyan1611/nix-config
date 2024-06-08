@@ -62,8 +62,10 @@
    steam-run
 
    kdePackages.gwenview
+   kdePackages.elisa
+   yt-dlp
+   ffmpeg_7
    mpv
-   ncmpcpp
 
    calibre
 
