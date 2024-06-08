@@ -59,6 +59,6 @@
 
    mangohud
    protonup
-
+   steam-run
   ];
 }
