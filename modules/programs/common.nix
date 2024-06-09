@@ -60,6 +60,7 @@
    mangohud
    protonup
    steam-run
+   bottles
 
    kdePackages.gwenview
    kdePackages.elisa
