@@ -67,6 +67,8 @@
    yt-dlp
    ffmpeg_7
    mpv
+   chromaprint
+   picard
 
    calibre
 
