@@ -146,9 +146,8 @@
     gamescopeSession.enable = true;
   };
 
-
-
   programs.gamemode.enable = true;
 
+  services.cpupower-gui.enable = true;
 }
 
