@@ -73,6 +73,7 @@
    calibre
 
    libreoffice-qt
+   discord
     
   ];
 }
