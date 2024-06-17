@@ -11,6 +11,7 @@
       ../../modules/programs/common.nix
       ../../modules/programs/laptop.nix
       ../../modules/services/common.nix
+      ../../modules/services/yukino.nix
     ];
 
   #Update to use newest kernel (for rog zephyrus g14)

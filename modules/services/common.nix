@@ -48,12 +48,8 @@
     xwayland.enable = true;
   };
 
-  environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = "1"; 
-    STEAM_EXTRA_COMPAT_TOOLS_PATHS =
-      "\\\${HOME}/.steam/root/compatibilitytools.d";
-    NIXOS_OZONE_WL = "1";	
-  };
+  environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";  
+   environment.sessionVariables.NIXOS_OZONE_WL = "1";	
   
   hardware = {
     opengl.enable = true;
@@ -130,24 +126,6 @@
   # adding for calibre
   services.udisks2.enable = true;
 
-  # adding steam
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "steam"
-    "steam-original"
-    "steam-run"
-  ];
-  
-  users.defaultUserShell = pkgs.zsh;
-  
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    gamescopeSession.enable = true;
-  };
-
-  programs.gamemode.enable = true;
-
-  services.cpupower-gui.enable = true;
+  users.defaultUserShell = pkgs.zsh; 
 }
 

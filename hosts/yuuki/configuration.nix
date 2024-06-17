@@ -11,6 +11,7 @@
       ./hardware-acceleration.nix
       ../../modules/programs/common.nix
       ../../modules/services/common.nix
+      ../../modules/services/yuuki.nix
     ];
 
   networking.hostName = "yuuki"; # Define your hostname.
