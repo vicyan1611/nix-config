@@ -9,7 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../modules/programs/common.nix
-      ../../modules/programs/laptop.nix
+      ../../modules/programs/yukino.nix
       ../../modules/services/common.nix
       ../../modules/services/yukino.nix
     ];

@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./hardware-acceleration.nix
       ../../modules/programs/common.nix
+      ../../modules/programs/yuuki.nix
       ../../modules/services/common.nix
       ../../modules/services/yuuki.nix
     ];

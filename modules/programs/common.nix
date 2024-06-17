@@ -43,13 +43,12 @@
    p7zip
 
    onedrive
-   dbeaver-bin
 
    wl-clipboard
 
    grim
    slurp
-   wev
+   brightnessctl
 
    arduino-ide
 
@@ -57,20 +56,11 @@
 
    lshw
 
-   mangohud
-   protonup
-   steam-run
-   bottles
-
    kdePackages.gwenview
    kdePackages.elisa
    yt-dlp
    ffmpeg_7
    mpv
-   chromaprint
-   picard
-
-   calibre
 
    libreoffice-qt
    discord
