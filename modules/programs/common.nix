@@ -65,6 +65,8 @@
    libreoffice-qt
    discord
    cloudflare-warp
+
+   neofetch
     
   ];
 }
