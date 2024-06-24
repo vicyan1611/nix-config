@@ -52,9 +52,8 @@
    environment.sessionVariables.NIXOS_OZONE_WL = "1";	
   
   hardware = {
-    opengl.enable = true;
-    opengl.driSupport = true;
-    opengl.driSupport32Bit = true;
+    graphics.enable = true;
+    
 
     pulseaudio.enable = false;
     bluetooth.enable = true;

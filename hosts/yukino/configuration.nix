@@ -34,7 +34,7 @@
 
   hardware = {
     ## Enable the Nvidia card, as well as Prime and Offload:
-    opengl.extraPackages = with pkgs; [
+    graphics.extraPackages = with pkgs; [
       # Also in nvidia/default.nix
       vaapiVdpau
       libvdpau-va-gl
