@@ -124,6 +124,7 @@
 
   # adding for calibre
   services.udisks2.enable = true;
+  services.gvfs.enable = true;
 
   users.defaultUserShell = pkgs.zsh; 
 }

@@ -65,7 +65,6 @@
    libreoffice-qt
    cloudflare-warp
 
-   neofetch
-    
+   android-file-transfer
   ];
 }
