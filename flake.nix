@@ -1,5 +1,5 @@
 {
-  description = "A simple NixOS flake for yukino and yuuki";
+  description = "A simple NixOS flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -7,9 +7,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nixos-wsl, ... }@inputs: {
     # Please replace yuuki with your hostname
     nixosConfigurations.yuuki = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -24,6 +25,17 @@
       system = "x86_64-linux";
       modules = [
         ./hosts/yukino/configuration.nix
+      ];
+   };
+    nixosConfigurations.kanade = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+	nixos-wsl.nixosModules.default
+          {
+            system.stateVersion = "24.05";
+            wsl.enable = true;
+          }
+        ./hosts/kanade/configuration.nix
       ];
    };
     homeConfigurations.vicyann = home-manager.lib.homeManagerConfiguration {
