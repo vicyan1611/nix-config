@@ -64,15 +64,15 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
     ".config/kitty" = {
-      source = dotfiles/kitty;
+      source = ../dotfiles/kitty;
       recursive = true;
     };
     ".config/hypr" = {
-      source = dotfiles/hypr;
+      source = ../dotfiles/hypr;
       recursive = true;
     };
     ".config/nvim" = {
-      source = dotfiles/nvim;
+      source = ../dotfiles/nvim;
       recursive = true;
     };
   };
