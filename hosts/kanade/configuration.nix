@@ -10,38 +10,11 @@
 {
   imports = [
     # include NixOS-WSL modules
+    ../../modules/base.nix
   ];
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   wsl.enable = true;
   wsl.defaultUser = "vicyann";
   wsl.wslConf.network.hostname = "kanade";
-  environment.systemPackages = with pkgs; [
-    git
-    neovim
-    fastfetch
-    home-manager
-  ];  
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
-  };
-  programs.starship = {
-    enable = true;
-    # Configuration written to ~/.config/starship.toml
-    settings = {
-      # add_newline = false;
-
-      # character = {
-      #   success_symbol = "[➜](bold green)";
-      #   error_symbol = "[➜](bold red)";
-      # };
-
-      # package.disabled = true;
-    };
-  };
-  users.defaultUserShell = pkgs.zsh;
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It's perfectly fine and recommended to leave

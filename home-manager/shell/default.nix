@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 {
   home.packages = with pkgs; [
-    neofetch
   ];
   programs.git = {
     enable = true;
@@ -18,8 +17,10 @@
     plugins = with pkgs.vimPlugins; [
       nvim-treesitter.withAllGrammars
     ];
+  }; 
+  programs.starship = {
+    enable = true;
   };
-
   home.file = {
     ".config/kitty" = {
       source = ./.kitty;
