@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
   ];
+
   programs.git = {
     enable = true;
     userName = "vicyann";
@@ -29,6 +30,9 @@
     ".config/nvim" = {
       source = ./.nvim;
       recursive = true;
+    };
+    ".zshrc" = {
+      source = ./.zshrc;
     };
   };
 }
