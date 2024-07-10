@@ -1,6 +1,12 @@
 { config, pkgs, ... }:
 {
+  #packages for lsp, linter - nvim
   home.packages = with pkgs; [
+    clang-tools
+    lua-language-server
+    stylua 
+    pyright
+    nil
   ];
 
   programs.git = {
