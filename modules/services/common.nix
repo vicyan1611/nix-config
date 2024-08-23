@@ -8,25 +8,9 @@
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
   networking.networkmanager.wifi.powersave = false;
 
-  # Set your time zone.
-   time.timeZone = "Asia/Ho_Chi_Minh";
-
-  # Install fonts
-  fonts.packages = with pkgs; [
-   (nerdfonts.override { fonts = ["SpaceMono"]; })
-  ];
+  
 
     # Select internationalisation properties.
-  i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [
-        fcitx5-mozc
-        fcitx5-gtk
-	libsForQt5.fcitx5-unikey
-        kdePackages.fcitx5-qt
-	kdePackages.fcitx5-unikey
-    ];
-  };
 
   console = {
     font = "Lat2-Terminus16";
@@ -50,15 +34,6 @@
 
   environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";  
    environment.sessionVariables.NIXOS_OZONE_WL = "1";	
-  
-  hardware = {
-    graphics.enable = true;
-    
-
-    pulseaudio.enable = false;
-    bluetooth.enable = true;
-    bluetooth.powerOnBoot = true;
-  };
 
   hardware.nvidia = {
     modesetting.enable = true;
@@ -80,21 +55,9 @@
   # Enable sound with pipeware
   sound.enable = true;
   security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    jack.enable = true;
-    pulse.enable = true;
-  };
+  
   services.blueman.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.vicyann = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "docker" "dialout"]; # Enable ‘sudo’ for the user.
-    home = "/home/vicyann";
-  };
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Docker
