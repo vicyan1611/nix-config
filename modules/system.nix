@@ -53,7 +53,7 @@
     home = "/home/vicyann";
   };
 
-  # Install fcitx5 to type vietnamese language
+  # Install fcitx5 and unikey to type vietnamese language
   i18n.inputMethod = {
     enable = true;
     type = "fcitx5";
@@ -62,7 +62,7 @@
       fcitx5-gtk
 	    libsForQt5.fcitx5-unikey
       kdePackages.fcitx5-qt
-	    kdePackages.fcitx5-unikey
+	    fcitx5-unikey
     ];
   };
 
