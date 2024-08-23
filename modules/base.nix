@@ -9,7 +9,7 @@
   users.defaultUserShell = pkgs.zsh;
   
   nix.settings.experimental-features = ["nix-command" "flakes"];
-
+  nixpkgs.config.allowUnfreePredicate = _: true;
   environment.systemPackages = with pkgs; [
     home-manager
   ];
