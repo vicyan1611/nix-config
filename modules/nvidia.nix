@@ -49,6 +49,6 @@
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.beta; # I choose the beta branch.
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
   };
 }
