@@ -23,18 +23,18 @@
 
     nixosConfigurations.yukino = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      modules = [
+      modules = [ 
         ./hosts/yukino/configuration.nix
       ];
    };
     nixosConfigurations.kanade = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-	nixos-wsl.nixosModules.default
-          {
-            system.stateVersion = "24.05";
-            wsl.enable = true;
-          }
+	    nixos-wsl.nixosModules.default
+        {
+          system.stateVersion = "24.05";
+          wsl.enable = true;
+        }
         ./hosts/kanade/configuration.nix
       ];
    };

@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports =
@@ -16,6 +16,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+
   # define graphic cards bus
   hardware.nvidia.prime = {
     
@@ -24,7 +25,7 @@
 		# 	enableOffloadCmd = true;
 	  # };
     
-      sync.enable = true;
+    sync.enable = true; 
 
     amdgpuBusId = "PCI:117:0:0";
     nvidiaBusId = "PCI:1:0:0";
@@ -33,7 +34,7 @@
   networking.hostName = "yukino"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
+  
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   
