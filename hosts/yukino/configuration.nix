@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ../../modules/system.nix  
       ../../modules/nvidia.nix
+      ../../modules/steam.nix
     ];
   
   # Use the systemd-boot EFI boot loader.
