@@ -8,5 +8,7 @@
       gcc # c++ compiler
       
       yt-dlp # youtube downloader
+
+      exfat
     ];
   }

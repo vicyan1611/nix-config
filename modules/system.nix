@@ -60,9 +60,9 @@
       fcitx5-mozc
       fcitx5-gtk
 	    libsForQt5.fcitx5-unikey
-      kdePackages.fcitx5-qt
+     kdePackages.fcitx5-qt
 	    fcitx5-unikey
-    ];
+   ];
   };
 
   # Install home-manager
