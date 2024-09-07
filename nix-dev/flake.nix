@@ -15,7 +15,7 @@
           nativeBuildInputs = with pkgs; [
           ];
           shellHook = ''
-            echo "Welcom to default nix development"
+            echo "Welcome to default nix development"
           '';
         };
     python-dev = 
@@ -26,7 +26,17 @@
             python312Packages.numpy
           ];
           shellHook = ''
-            echo "Welcom to nix python development"
+            echo "Welcome to nix python development"
+          '';
+        };
+    node-dev = 
+      pkgs.mkShell
+        {
+          nativeBuildInputs = with pkgs; [
+            nodejs_20
+          ];
+          shellHook = ''
+            echo "Welcome to nix nodejs development"
           '';
         };
   };
