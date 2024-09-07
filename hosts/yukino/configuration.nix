@@ -11,6 +11,7 @@
       ../../modules/system.nix  
       ../../modules/nvidia.nix
       ../../modules/steam.nix
+      ../../modules/kde.nix
     ];
   
   # Use the systemd-boot EFI boot loader.
@@ -39,10 +40,6 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   
-  # Enable kde plasma
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
-
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.05"; # Did you read the comment?
 
