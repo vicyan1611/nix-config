@@ -6,5 +6,7 @@
 
   environment.systemPackages = with pkgs; [
     kdePackages.kcolorchooser # color picker
+    kdePackages.partitionmanager
+    gparted # disk partition
   ];
 }
